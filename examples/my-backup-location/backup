@@ -1,0 +1,10 @@
+#!/bin/bash
+pushd $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) >/dev/null
+. ../duplicity || exit 1
+
+export FROM_DIR=/home/stuff_to_back_up
+export DEST_DIR=/home/backups/my-backup-location
+export PASSPHRASE="super secret password"
+
+duplicity_docker
+fix_permissions
