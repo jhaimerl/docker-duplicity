@@ -6,7 +6,7 @@ function fix_permissions() {
 }
 
 function duplicity_docker() {
-  docker run --rm -it --user root \
+  docker run --rm -i --user root \
         -e PASSPHRASE=$PASSPHRASE \
         -v $FROM_DIR:/from:ro \
         -v $DEST_DIR/data:/dest \
